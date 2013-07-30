@@ -3,7 +3,7 @@ threex.proceduralcity.js
 
 It is a three.js extension to display a fully procedural city based on 
 ["city"](http://www.mrdoob.com/lab/javascript/webgl/city/01/)
-, a  demo recently released by 
+, a  demo [recently released](https://twitter.com/mrdoob/status/350730133319073792) by 
 [@mrdoob](http://mrdoob.com).
 You can try a
 [demo live](https://jeromeetienne.github.io/threex.proceduralcity/examples/demo.html)
@@ -14,7 +14,7 @@ Here is a
 and its
 [source](https://github.com/jeromeetienne/threex.proceduralcity/blob/master/examples/basic.html).
 
-## How To install it
+## How To Install It
 
 You can install it manually or with
 [bower](http://bower.io/).
@@ -50,3 +50,5 @@ scene.add(city)
 The [demo live](https://jeromeetienne.github.io/threex.proceduralcity/examples/demo.html)
 contains this city plus a ground, a first personn controls and a fog.
 This is rather cool result for as little effort.
+
+
