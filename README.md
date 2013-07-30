@@ -5,15 +5,14 @@ It is a three.js extension to display a fully procedural city based on
 ["city"](http://www.mrdoob.com/lab/javascript/webgl/city/01/)
 , a  demo recently released by 
 [@mrdoob](http://mrdoob.com).
-
 You can try a
-[demo live](https://jeromeetienne.github.io/threex/src/threex.proceduralcity/examples/demo.html)
+[demo live](https://jeromeetienne.github.io/threex.proceduralcity/examples/demo.html)
 and check its 
-[source](https://github.com/jeromeetienne/threex/blob/master/src/threex.proceduralcity/examples/demo.html).
+[source](https://github.com/jeromeetienne/threex.proceduralcity/blob/master/examples/demo.html).
 Here is a 
-[more basic example](http://jeromeetienne.github.io/threex/src/threex.proceduralcity/examples/basic.html) 
-and its [source]
-[source](https://github.com/jeromeetienne/threex/blob/master/src/threex.proceduralcity/examples/basic.html).
+[more basic example](http://jeromeetienne.github.io/threex.proceduralcity/examples/basic.html) 
+and its
+[source](https://github.com/jeromeetienne/threex.proceduralcity/blob/master/examples/basic.html).
 
 ## How To install it
 
@@ -41,9 +40,13 @@ then you add that in your html
 
 ## How To Use It
 
-Super simple, 
+Super simple, just create an instance and it will return a ```THREE.Mesh```
 
 ```javascript
 var city  = new THREEx.ProceduralCity()
 scene.add(city) 
 ```
+
+The [demo live](https://jeromeetienne.github.io/threex.proceduralcity/examples/demo.html)
+contains this city plus a ground, a first personn controls and a fog.
+This is rather cool result for as little effort.
