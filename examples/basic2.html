@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <script src='vendor/three.js/build/three.min.js'></script>
-<script src='../threex.proceduralcity.js'></script>
-<body style='margin: 0px; background-color: #bbbbbb; overflow: hidden;'><script>
-	var renderer	= new THREE.WebGLRenderer();
+<script src='../threex.proceduralcity2.js'></script>
+<body style='margin: 0px; background-color: #d8e7ff; overflow: hidden;'><script>
+	var renderer	= new THREE.WebGLRenderer({
+		antialiasing	: true
+	});
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
 	var updateFcts	= [];
 	var scene	= new THREE.Scene();
-	var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 3000 );
-	camera.position.z = 200;
+	scene.fog	= new THREE.FogExp2( 0xd0e0f0, 0.0025 );
+	var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000 );
+	camera.position.z = 45;
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		comment								//
 	//////////////////////////////////////////////////////////////////////////////////
 	
-	var city	= new THREEx.ProceduralCity()
-	scene.add(city)	
+	var proceduralCity	= new THREEx.ProceduralCity()
+	// var building		= proceduralCity.getBuilding().clone()
+	// proceduralCity.scaleBuilding(building)
+	// proceduralCity.colorifyBuilding(building)
+	// scene.add(building)	
+
+	// var mesh	= proceduralCity.createMrDoobCity()
+	var mesh	= proceduralCity.createSquareCity()
+	scene.add(mesh)
+
+
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object and make it move					//
@@ -36,9 +48,14 @@
 	}, false)
 	updateFcts.push(function(delta, now){
 		camera.position.x += (mouse.x*300 - camera.position.x) * (delta*3)
-		camera.position.y += (mouse.y*300 - (camera.position.y-200)) * (delta*3)
+		camera.position.y += (mouse.y*300 - (camera.position.y-100)) * (delta*3)
 		camera.lookAt( scene.position )
 	})
+	// updateFcts.push(function(delta, now){
+	// 	camera.position.x += (mouse.x*30 - camera.position.x) * (delta*3)
+	// 	camera.position.y += (mouse.y*30 - (camera.position.y)) * (delta*3)
+	// 	camera.lookAt( scene.position )
+	// })
 
 
 	//////////////////////////////////////////////////////////////////////////////////
